@@ -1,0 +1,6 @@
+---
+import BaseLayout from '../../../components/BaseLayout.astro'; import SoundscapeControls from '../../../components/SoundscapeControls.astro'; import { toolCopy } from '../../../data/tool-copy'; import { languages, type Language } from '../../../config';
+export function getStaticPaths(){return languages.map(lang=>({params:{lang}}))} const {lang='en'}=(Astro.params ?? {}) as {lang?:Language}; const copy=toolCopy[lang];
+---
+<BaseLayout lang={lang} title={`${copy.soundsTitle} | Calm SOS`} description="Choose rain or ocean waves for resting, reading or focusing."><section class="shell intro"><p class="eyebrow">Free browser tool</p><h1>{copy.soundsTitle}</h1><p class="lead">{copy.soundsIntro}</p></section><section class="shell sounds"><SoundscapeControls mode="rain" labels={copy}/><SoundscapeControls mode="ocean" labels={copy}/></section></BaseLayout>
+<style>.intro{padding:4.5rem 0 2rem;max-width:760px}.intro h1{margin:.4rem 0}.lead{font-size:1.2rem;color:var(--muted)}.sounds{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:4rem}@media(max-width:700px){.sounds{grid-template-columns:1fr}}</style>

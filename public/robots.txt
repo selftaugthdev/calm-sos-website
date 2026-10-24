@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://calmsos.com/sitemap.xml

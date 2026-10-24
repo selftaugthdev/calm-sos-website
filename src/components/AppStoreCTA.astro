@@ -1,0 +1,5 @@
+---
+import { site } from '../config'; const { compact=false } = Astro.props;
+---
+<section class:list={['cta surface', { compact }]}><div><p class="eyebrow">Calm SOS for iPhone</p><h2>{compact ? 'Keep a calm tool close by' : 'A calm next step, whenever you want it'}</h2><p class="muted">Calm SOS is available on the App Store whenever you want a gentle tool close at hand.</p></div><a class="button button-primary" href={site.appStoreUrl}>{site.appStoreLabel}</a></section>
+<style>.cta{margin:4rem auto;padding:clamp(1.5rem,4vw,3rem);display:flex;gap:2rem;align-items:center;justify-content:space-between}.cta h2{font-size:clamp(1.5rem,3vw,2.25rem);margin:.4rem 0}.compact{margin:2rem 0}@media(max-width:650px){.cta{display:block}.cta .button{margin-top:1rem}}</style>

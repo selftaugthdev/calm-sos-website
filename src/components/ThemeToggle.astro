@@ -1,0 +1,11 @@
+<button class="theme" type="button" aria-label="Switch colour theme" data-theme-toggle>◐ <span>Theme</span></button>
+<script is:inline>
+  const root = document.documentElement;
+  const saved = localStorage.getItem('calm-sos-theme');
+  if (saved) root.dataset.theme = saved;
+  document.querySelector('[data-theme-toggle]')?.addEventListener('click', () => {
+    const next = root.dataset.theme === 'dark' || (!root.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches) ? 'light' : 'dark';
+    root.dataset.theme = next; localStorage.setItem('calm-sos-theme', next);
+  });
+</script>
+<style>.theme{border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:999px;padding:.45rem .7rem;cursor:pointer;font:inherit;font-size:.85rem}</style>
