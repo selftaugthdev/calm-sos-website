@@ -17,7 +17,7 @@ const { measurementId = '' } = Astro.props;
     script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
     document.head.append(script);
   };
-  const box = document.querySelector<HTMLElement>('[data-cookie]');
+  const box = document.querySelector('[data-cookie]');
   const consent = localStorage.getItem('calm-sos-consent');
   if (!consent) box?.removeAttribute('hidden');
   if (consent === 'analytics') loadAnalytics();
