@@ -14,6 +14,10 @@ npm run build
 
 Update `src/config.ts` with the verified App Store URL, confirmed product features and pricing. Replace the phone illustration with supplied screenshots and add an Open Graph image. Confirm all crisis numbers and have a qualified professional review the health content. Configure a consented privacy-friendly analytics provider only if wanted.
 
+## Analytics
+
+To enable consented Google Analytics, add the GA4 Measurement ID to Vercel as the `PUBLIC_GA_MEASUREMENT_ID` environment variable, then redeploy. The tracking script loads only after a visitor accepts analytics in the cookie banner.
+
 ## Browser soundscapes
 
 The rain and ocean soundscapes are generated on demand with the browser Web Audio API. They do not autoplay, download third-party media or require a licence attribution. If recorded audio is introduced later, store its source and licence in this README and retain the same explicit play, volume and sleep-timer controls.
